@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sherehe Hits | Order Your Song</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 35px 15px;
+            font-family: Arial, Helvetica, sans-serif;
+
+            /* Headphones background */
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+                url("https://images.unsplash.com/photo-1505740420928-5e560c06d30e");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 680px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+            border-top: 7px solid #e9a900;
+        }
+
+        /* Logo area */
+        .logo-area {
+            background: #ffffff;
+            padding: 18px 25px 12px;
+            text-align: center;
+        }
+
+        .logo-area img {
+            width: 100%;
+            max-width: 440px;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+
+        .gold-line {
+            height: 4px;
+            width: 90px;
+            background: #e9a900;
+            margin: 5px auto 0;
+            border-radius: 10px;
+        }
+
+        .form-content {
+            padding: 25px 32px 32px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #555;
+            line-height: 1.6;
+            margin: 0 0 25px;
+        }
+
+        .section-title {
+            color: #111;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 0 20px;
+            border-left: 5px solid #e9a900;
+            padding-left: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 18px 0 7px;
+            color: #222;
+            font-weight: 700;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d2d2d2;
+            border-radius: 8px;
+            background: #fff;
+            color: #222;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #e9a900;
+            box-shadow: 0 0 0 3px rgba(233, 169, 0, 0.12);
+        }
+
+        textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        .hint {
+            display: block;
+            margin-top: 6px;
+            color: #777;
+            font-size: 12px;
+        }
+
+        .other-box {
+            display: none;
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 28px;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #111111;
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 800;
+            cursor: pointer;
+            border-bottom: 4px solid #e9a900;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #2b2b2b;
+            transform: translateY(-1px);
+        }
+
+        /* Footer advertisement */
+        footer {
+            width: 100%;
+            max-width: 680px;
+            margin: 18px auto 0;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(233, 169, 0, 0.55);
+            border-radius: 14px;
+        }
+
+        footer .pamu {
+            color: #e9a900;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        footer p {
+            margin: 6px 0;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        footer .price {
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        footer .phone {
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 9px;
+            }
+
+            .form-content {
+                padding: 22px 18px 25px;
+            }
+
+            .logo-area {
+                padding: 12px 15px 8px;
+            }
+
+            .intro {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="form-container">
+
+        <!-- REAL SHEREHE HITS LOGO -->
+        <div class="logo-area">
+            <img src="sherehe-logo.png" alt="Sherehe Hits - Personalised Songs for Every Occasion">
+            <div class="gold-line"></div>
+        </div>
+
+        <div class="form-content">
+
+            <p class="intro">
+                Turn your special moment into a personalised song.
+                Fill in the details below and we'll create music made for you.
+            </p>
+
+            <h2 class="section-title">Song Order Details</h2>
+
+            <form id="order-form">
+
+                <label for="customer-name">Customer Name</label>
+                <input
+                    type="text"
+                    id="customer-name"
+                    name="customer_name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="phone">WhatsApp / Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="e.g. 0712345678"
+                    required
+                >
+
+                <label for="occasion">Occasion</label>
+                <select
+                    id="occasion"
+                    name="occasion"
+                    onchange="showOther('occasion', 'other-occasion')"
+                    required
+                >
+                    <option value="">-- Select an occasion --</option>
+                    <option value="Birthday">Birthday</option>
+                    <option value="Wedding">Wedding</option>
+                    <option value="Anniversary">Anniversary</option>
+                    <option value="Retirement">Retirement</option>
+                    <option value="Graduation">Graduation</option>
+                    <option value="Baby shower">Baby Shower</option>
+                    <option value="Valentine">Valentine</option>
+                    <option value="Funeral">Funeral</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <div id="other-occasion" class="other-box">
+                    <label for="other-occasion-input">Please Specify the Occasion</label>
+                    <input
+                        type="text"
+                        id="other-occasion-input"
+                        name="other_occasion"
+                        placeholder="Tell us what the occasion is"
+                    >
+                </div>
+
+                <label for="person">Name of Person the Song is For</label>
+                <input
+                    type="text"
+                    id="person"
+                    name="person"
+                    placeholder="Enter their name"
+                    required
+                >
+
+                <label for="relationship">Relationship to the Person</label>
+                <input
+                    type="text"
+                    id="relationship"
+                    name="relationship"
+                    placeholder="e.g. Mother, Father, Friend, Husband"
+                >
+
+                <label for="language">Song Language</label>
+                <select
+                    id="language"
+                    name="language"
+                    onchange="showOther('language', 'other-language')"
+                    required
+                >
+                    <option value="">-- Select language --</option>
+                    <option value="English">English</option>
+                    <option value="Kiswahili">Kiswahili</option>
+                    <option value="English and Kiswahili">English & Kiswahili</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <div id="other-language" class="other-box">
+                    <label for="other-language-input">Please Specify the Language</label>
+                    <input
+                        type="text"
+                        id="other-language-input"
+                        name="other_language"
+                        placeholder="Enter the language"
+                    >
+                </div>
+
+                <label for="music-style">
+                    What Is Your Favorite Music Style or Song?
+                </label>
+                <input
+                    type="text"
+                    id="music-style"
+                    name="music_style"
+                    placeholder="e.g. Gospel, Benga, Afrobeat, R&B, Amapiano, or name a song you like"
+                    required
+                >
+                <span class="hint">
+                    You can give us a music style or mention a song that inspires the sound you want.
+                </span>
+
+                <label for="names">Names to Mention in the Song</label>
+                <textarea
+                    id="names"
+                    name="names"
+                    placeholder="Enter all the names you would like mentioned in the song..."
+                    required
+                ></textarea>
+
+                <label for="message">Special Message / Details</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us what you would like the song to say. Include memories, achievements, funny moments, or anything special..."
+                    required
+                ></textarea>
+
+                <button type="submit" id="submit-btn">🎵 ORDER MY SONG</button>
+                <p id="form-status" role="status" style="display:none;margin:18px 0 0;padding:14px;border-radius:8px;text-align:center;font-weight:700;"></p>
+
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="pamu">PAMU TECHNOLOGIES</div>
+        <p>This website was created by Pamu Technologies.</p>
+        <p>Need your own professional website?</p>
+        <p class="price">Websites starting at KSh 3,000</p>
+        <p class="phone">DM / WhatsApp: 0743227500</p>
+    </footer>
+
+    <script>
+        function showOther(selectId, boxId) {
+            const select = document.getElementById(selectId);
+            const box = document.getElementById(boxId);
+            const input = box.querySelector("input");
+
+            if (select.value === "Other") {
+                box.style.display = "block";
+                input.required = true;
+            } else {
+                box.style.display = "none";
+                input.required = false;
+                input.value = "";
+            }
+        }
+
+        // ====== GOOGLE FORM CONNECTION ======
+        // Entry IDs taken from your Google Form.
+        const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdCNZqPKFmoc8QsPuv94IwXNToPO19CCn70JuEhYK3Eb3nRtw/formResponse";
+
+        const ENTRY = {
+            customer_name: "entry.514735344",
+            phone:         "entry.1053365969",
+            occasion:      "entry.271872197",
+            person:        "entry.291331540",
+            relationship:  "entry.1888427506",
+            language:      "entry.1788097697",
+            music_style:   "entry.209988941",
+            names:         "entry.1364132367",
+            message:       "entry.1903973775"
+        };
+
+        const orderForm = document.getElementById("order-form");
+        const submitBtn = document.getElementById("submit-btn");
+        const statusBox = document.getElementById("form-status");
+
+        function showStatus(text, ok) {
+            statusBox.textContent = text;
+            statusBox.style.display = "block";
+            statusBox.style.background = ok ? "#e8f7ec" : "#fdecea";
+            statusBox.style.color = ok ? "#1b6b34" : "#a12622";
+        }
+
+        orderForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const f = orderForm.elements;
+
+            // The Google Form dropdowns only accept their listed options,
+            // so "Other" details are added to the message instead.
+            let message = f.message.value.trim();
+            if (f.occasion.value === "Other" && f.other_occasion.value.trim()) {
+                message += "\n\n[Other occasion: " + f.other_occasion.value.trim() + "]";
+            }
+            if (f.language.value === "Other" && f.other_language.value.trim()) {
+                message += "\n\n[Other language: " + f.other_language.value.trim() + "]";
+            }
+
+            const data = new FormData();
+            data.append(ENTRY.customer_name, f.customer_name.value.trim());
+            data.append(ENTRY.phone, f.phone.value.trim());
+            data.append(ENTRY.occasion, f.occasion.value);
+            data.append(ENTRY.person, f.person.value.trim());
+            data.append(ENTRY.relationship, f.relationship.value.trim());
+            data.append(ENTRY.language, f.language.value);
+            data.append(ENTRY.music_style, f.music_style.value.trim());
+            data.append(ENTRY.names, f.names.value.trim());
+            data.append(ENTRY.message, message);
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+
+            try {
+                // no-cors: Google doesn't return a readable response, but the entry is saved.
+                await fetch(FORM_ACTION, { method: "POST", mode: "no-cors", body: data });
+                orderForm.reset();
+                document.querySelectorAll(".other-box").forEach(b => b.style.display = "none");
+                showStatus("Thank you! Your song order has been received. We'll contact you on WhatsApp soon.", true);
+            } catch (err) {
+                showStatus("Something went wrong. Please check your internet and try again.", false);
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = "🎵 ORDER MY SONG";
+        });
+    </script>
+
+</body>
+</html>
